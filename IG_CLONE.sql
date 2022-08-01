@@ -10,7 +10,7 @@ USE ig_clone;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ig_clone`.users(
 	id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(255) UNIQUE NOT NULL,
+    username VARCHAR(200) UNIQUE NOT NULL,
     created_at TIMESTAMP DEFAULT NOW()
 );
 
@@ -19,8 +19,8 @@ CREATE TABLE IF NOT EXISTS `ig_clone`.users(
 -- ------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ig_clone`.photos(
 	id INT AUTO_INCREMENT PRIMARY KEY,
-    image_url VARCHAR(255) NOT NULL,
-    caption VARCHAR(255),
+    image_url VARCHAR(200) NOT NULL,
+    caption VARCHAR(200),
     user_id INT NOT NULL,
     created_at TIMESTAMP DEFAULT NOW(),
     FOREIGN KEY(user_id) REFERENCES users(id)
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `ig_clone`.photos(
 -- -------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ig_clone`.comments(
 	id INT AUTO_INCREMENT PRIMARY KEY,
-    comment_text VARCHAR(255) NOT NULL,
+    comment_text VARCHAR(200) NOT NULL,
     user_id INT NOT NULL,
     photo_id INT NOT NULL,
     created_at TIMESTAMP DEFAULT NOW(),
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `ig_clone`.likes(
 -- ------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ig_clone`.tags(
 	id INT AUTO_INCREMENT PRIMARY KEY,
-    tag_name VARCHAR(255) UNIQUE,
+    tag_name VARCHAR(200) UNIQUE,
     created_at TIMESTAMP DEFAULT NOW()
 );
 
